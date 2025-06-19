@@ -8,7 +8,7 @@
 June 18, 2025
 
 ### Project Title  
-Explore US Bikeshare Data with Python
+Bikeshare Data with Python
 
 ### Description  
 This project analyzes bikeshare data for three major U.S. cities: Chicago, New York City, and Washington. Using Python and CSV datasets, it enables users to filter the data by city, month, and day to uncover various insights, including:
