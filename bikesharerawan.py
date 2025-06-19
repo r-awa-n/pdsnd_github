@@ -13,36 +13,28 @@ def get_filters():
 
     Returns:
         (str) city - name of the city to analyze
-        (str) month - name of the month to filter by, or "all" to apply no month filter
-        (str) day - name of the day of week to filter by, or "all" to apply no day filter
+        (str) month - month name to filter by, or "all"
+        (str) day - day of the week to filter by, or "all"
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print("Hello! Let's explore some US bikeshare data!")
 
-    city = ""
-    while city!="chicago" and city!="new york city" and city!="washington":
-        city=input("Would you like to see data for Chicago, New york, or Washington?").strip().lower()
-        if city!="chicago" and city!="new york city" and city!="washington":
-            print("Invalid city!! Please enter either 'Chicago', 'New York City', or 'Washington'.\n")
+    # Define valid input options
+    valid_cities = ['chicago', 'new york city', 'washington']
+    valid_months = ['january', 'february', 'march', 'april', 'may', 'june']
+    valid_days = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
 
+    def get_valid_input(prompt, valid_options):
+        while True:
+            user_input = input(prompt).strip().lower()
+            if user_input in valid_options or user_input == 'all':
+                return user_input
+            print("Invalid input! Please try again.\n")
 
+    city = get_valid_input("Would you like to see data for Chicago, New York City, or Washington? ", valid_cities)
+    month = get_valid_input("Which month? (January to June, or 'all'): ", valid_months)
+    day = get_valid_input("Which day? (e.g., Monday, or 'all'): ", valid_days)
 
-    valid_months = ['january','february','march','april','may','june']
-    month=""
-    while month not in valid_months and month!="all":
-        month = input("Which Month?").lower()
-        if month not in valid_months and month!="all":
-            print("Invalid month!! \n")
-
-
-
-    day_of_week = ['monday','tuesday','wednesday','thursday','friday','saturday','sunday']
-    day=""
-    while day not in day_of_week and day!="all":
-        day = input("Which Day?").lower()
-        if day not in day_of_week and day!="all":
-            print("Invalid day!! \n")
-
-    print('-'*40)
+    print('-' * 40)
     return city, month, day
 
 
