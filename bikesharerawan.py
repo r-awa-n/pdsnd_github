@@ -67,7 +67,7 @@ def load_data(city, month, day):
 
         df = df[df['month'] == month]
 
-    # filtering on date type
+    # filtering on DATA
     if day != 'all':
         # filtering on day in week
         df = df[df['day_of_week'].str.lower() == day.lower()]
